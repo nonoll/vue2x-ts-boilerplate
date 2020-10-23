@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+    <div class="box">@include square(100px, $radius: 4px);</div>
     <router-view />
   </div>
 </template>
@@ -28,5 +29,12 @@
       color: #42b983;
     }
   }
+}
+
+.box {
+  display: inline-block;
+  border: 1px solid red;
+  box-sizing: border-box;
+  @include square(100px, $radius: 4px);
 }
 </style>

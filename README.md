@@ -1,34 +1,16 @@
 # vue2x-ts-boilerplate
 
-## Project setup
-```
-npm install
+## 구성
+- vue cli base
+
+## 폴더 구조
+- TODO
+```bash
+// 
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 구성 진행 상황
+| 완료 여부   |      구분      |  비고 |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | - |
+| col 1 is |  left-aligned | - |

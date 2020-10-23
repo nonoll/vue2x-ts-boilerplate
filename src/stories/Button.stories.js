@@ -15,7 +15,11 @@ const Template = (args, { argTypes }) => ({
   template: '<my-button @onClick="onClick" v-bind="$props" />'
 });
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({
+  onClick: () => {
+    console.log('Primary onClick...');
+  }
+});
 Primary.args = {
   primary: true,
   label: 'Button'

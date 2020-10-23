@@ -118,13 +118,49 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { bind, format, getFormat } from '@/decorators';
+
+class Greeter {
+  @format('Hello, %s')
+  greeting: string;
+
+  constructor(message: string) {
+    this.greeting = message;
+  }
+
+  greet(): string {
+    const formatString = getFormat(this, 'greeting');
+    return formatString.replace('%s', this.greeting);
+  }
+}
+
+class TestClass {
+  constructor(private greeter: Greeter) {
+    window.document.addEventListener('click', this.onListener);
+    window.document.addEventListener('click', this.onListener2);
+  }
+
+  @bind
+  onListener() {
+    console.log('@bind ', this, this.greeter.greet());
+  }
+
+  onListener2() {
+    console.log('normal ', this, this.greeter);
+  }
+}
 
 @Component
-export default class HelloWorld extends Vue {
+export default class extends Vue {
   @Prop() private msg!: string;
 
   get VUE_APP_TITLE(): string {
     return process.env.VUE_APP_TITLE;
+  }
+
+  mounted() {
+    console.log('mounted');
+    // new TestClass(new Greeter('mounted'));
   }
 }
 </script>

@@ -8,6 +8,8 @@ import store from './store';
 
 import '@/styles/app.scss';
 
+import '@/plugins';
+
 Vue.config.productionTip = false;
 
 new Vue({

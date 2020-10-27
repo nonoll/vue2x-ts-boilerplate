@@ -1,5 +1,5 @@
 export function bind<T extends Function>(
-  target: object,
+  _: object,
   key: string,
   descriptor: TypedPropertyDescriptor<T>
 ): TypedPropertyDescriptor<T> | void {

@@ -1,4 +1,5 @@
-import MyButton from './Button.vue';
+import { actions } from '@storybook/addon-actions';
+import { MyButton } from '../index';
 
 export default {
   title: 'Example/Button',
@@ -9,10 +10,19 @@ export default {
   }
 };
 
+const eventsFromObject = actions({
+  onClick: 'onClick'
+});
+
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MyButton },
-  template: '<my-button @onClick="onClick" v-bind="$props" />'
+  data() {
+    return {
+      eventsFromObject
+    };
+  },
+  template: '<my-button v-on="eventsFromObject" v-bind="$props" />'
 });
 
 export const Primary = Template.bind({

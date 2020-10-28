@@ -1,4 +1,4 @@
-import MyPage from './Page';
+import { MyPage } from '../';
 import * as HeaderStories from './Header.stories';
 
 export default {

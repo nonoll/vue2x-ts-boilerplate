@@ -1,5 +1,3 @@
-import 'reflect-metadata';
-
 const formatMetadataKey = Symbol('format');
 
 export function format(formatString: string) {

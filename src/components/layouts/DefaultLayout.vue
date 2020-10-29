@@ -2,7 +2,6 @@
   <div class="default-layout">
     <div>
       <p>default-layout!</p>
-      <p v-highlight>highlight</p>
       <button @click="onBtnClick">test button</button>
     </div>
     <slot></slot>

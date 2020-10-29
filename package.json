@@ -9,13 +9,14 @@
     "development:build": "vue-cli-service build --mode development",
     "production:serve": "vue-cli-service serve --mode production",
     "production:build": "vue-cli-service build --mode production",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook:serve": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
+    "@u3u/vue-hooks": "^2.0.1",
     "@vue/composition-api": "^1.0.0-beta.18",
     "axios": "^0.21.0",
     "core-js": "^3.6.5",

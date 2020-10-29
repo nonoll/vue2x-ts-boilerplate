@@ -1,13 +1,24 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Index</router-link> |
+      <router-link to="/class-base">ClassBase</router-link> |
+      <router-link to="/composition">Composition</router-link>
     </div>
-    <div class="box">@include square(100px, $radius: 4px);</div>
     <router-view />
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api';
+import { provideStore } from '@/composables';
+
+export default defineComponent({
+  setup(_, { root }) {
+    provideStore(root.$store);
+  }
+});
+</script>
 
 <style lang="scss">
 #app {
@@ -29,12 +40,5 @@
       color: #42b983;
     }
   }
-}
-
-.box {
-  display: inline-block;
-  border: 1px solid red;
-  box-sizing: border-box;
-  @include square(100px, $radius: 4px);
 }
 </style>

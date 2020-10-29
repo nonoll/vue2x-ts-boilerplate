@@ -7,11 +7,6 @@
 <script lang="ts">
 import { defineComponent, SetupContext, computed } from '@vue/composition-api';
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-interface ITemp {
-  [key: string]: unknown;
-}
-
 export default defineComponent({
   name: 'my-button',
   props: {
@@ -26,7 +21,7 @@ export default defineComponent({
     size: {
       type: String,
       default: 'medium',
-      validator: function(value: string) {
+      validator: (value: string) => {
         return ['small', 'medium', 'large'].indexOf(value) !== -1;
       }
     },
@@ -34,8 +29,7 @@ export default defineComponent({
       type: String
     }
   },
-  setup(props: ITemp, { emit }: SetupContext) {
-    console.log('props', props);
+  setup(props, { emit }: SetupContext) {
     const classes = computed(() => {
       return {
         'storybook-button': true,
